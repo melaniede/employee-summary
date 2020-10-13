@@ -22,12 +22,13 @@ let promptQuestions = () => {
         let newEmployee;
         switch (response.role) {
             case "Engineer": 
-                newEployee = new Engineer(reponse.name, response.id, response.email, response.github);
+                newEmployee = new Engineer(reponse.name, response.id, response.email, response.github);
                 employees.push(newEmployee);
             break;
             case "Manager":
                 newEmployee = new Manager (response.name, response.id, response.email, response.officeNumber);
                 employees.push(newEmployee);
+            break;
             case "Intern":
                 newEmployee = new Intern(response.name, response.id, response.email, response.github);
                 employees.push(newEmployee);
