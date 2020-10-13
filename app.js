@@ -17,25 +17,25 @@ let employees = [];
 // Prompt user questions
 let promptQuestions = () => {
     return inquirer.prompt(questions)
-    .then(function (response){
+    .then(function (answer){
 
         let newEmployee;
-        switch (response.role) {
+        switch (answer.role) {
             case "Engineer": 
-                newEmployee = new Engineer(reponse.name, response.id, response.email, response.github);
+                newEmployee = new Engineer(answer.name, answer.id, answer.email, answer.github);
                 employees.push(newEmployee);
             break;
             case "Manager":
-                newEmployee = new Manager (response.name, response.id, response.email, response.officeNumber);
+                newEmployee = new Manager (answer.name, answer.id, answer.email, answer.officeNumber);
                 employees.push(newEmployee);
             break;
             case "Intern":
-                newEmployee = new Intern(response.name, response.id, response.email, response.github);
+                newEmployee = new Intern(answer.name, answer.id, answer.email, answer.school);
                 employees.push(newEmployee);
             break;
         }
 
-    if (response.continue) {
+    if (answer.continue) {
         return promptQuestions();
     }
 
