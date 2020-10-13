@@ -2,6 +2,7 @@ const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const inquirer = require("inquirer");
+const questions = require("./lib/questions");
 const path = require("path");
 const fs = require("fs");
 
@@ -9,14 +10,53 @@ const OUTPUT_DIR = path.resolve(__dirname, "output");
 const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
+const Employee = require("./lib/Employee");
 
 let employees = [];
 
 // Prompt user questions
 let promptQuestions = () => {
-    return inquirer.prompt(questions[type]);
-};
+    return inquirer.prompt(questions)
+    .then(function (response){
 
+        let newEmployee;
+        switch (response.role) {
+            case "Engineer": 
+                newEployee = new Engineer(reponse.name, response.id, response.email, response.github);
+                employees.push(newEmployee);
+            break;
+            case "Manager":
+                newEmployee = new Manager (response.name, response.id, response.email, response.officeNumber);
+                employees.push(newEmployee);
+            case "Intern":
+                newEmployee = new Intern(response.name, response.id, response.email, response.github);
+                employees.push(newEmployee);
+            break;
+        }
+
+    if (response.continue) {
+        return promptQuestions();
+    }
+
+    displayHTML();
+
+    });
+}
+
+// display HTML
+let displayHTML = () => {
+    let createHTML = render(employees);
+    fs.writeFile(outputPath, createHTML, function(error){
+        if (error){
+            console.log(error);
+        }
+        else{
+            console.log("File successfully created!");
+        }
+    })
+}
+
+promptQuestions();
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
