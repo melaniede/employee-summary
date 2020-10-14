@@ -8,8 +8,12 @@ Check out my engineering team here! [Link to the team](https://www.npmjs.com/pac
 
 ## Employee Summary Homepage
 <img src="/assets/images/my_team.png">
+<!-- ![](/assets/images/my_team.png)
+<img src="/assets/images/my_team.png" width = "550"> -->
 
 ## Employee Prompt Questions
+<!-- <img src="/assets/images/prompt_questions.png"> -->
+![](/assets/images/prompt_questions.png)
 <img src="/assets/images/prompt_questions.png" width = "550">
 
 ## Unit Test Results
