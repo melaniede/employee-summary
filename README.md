@@ -3,9 +3,6 @@
 ### Description
 Use this Node CLI app to build a software engineering team generator. The app prompts users for information about their team manager and team members. The user can input any number of team members, including a mix of engineers and interns. Once the user has completed building their team, the app will create an HTML file that displays the team roster based on the information they provided.
 
-### Deployed Application
-Check out my engineering team here! [Link to the team](https://www.npmjs.com/package/).
-
 ## Employee Summary Homepage
 <img src="/assets/images/my_team.png">
 
