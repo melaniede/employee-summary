@@ -12,9 +12,9 @@ Check out my engineering team here! [Link to the team](https://www.npmjs.com/pac
 <img src="/assets/images/my_team.png" width = "550"> -->
 
 ## Employee Prompt Questions
-<!-- <img src="/assets/images/prompt_questions.png"> -->
-![](/assets/images/prompt_questions.png)
-<img src="/assets/images/prompt_questions.png" width = "300">
+<img src="/assets/images/prompt_questions.png" width="100" height="100"/>
+<!-- ![](/assets/images/prompt_questions.png)
+<img src="/assets/images/prompt_questions.png" width = "300"> -->
 
 ## Unit Test Results
 <img src="/assets/images/jest_results.png">
